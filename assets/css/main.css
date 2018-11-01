@@ -247,6 +247,10 @@ p.lead {
     text-transform: uppercase;
 }
 
+.g-recaptcha {
+  margin-bottom: 15px;
+}
+
 footer {
     background-color: #293133;
     color: #e82969;

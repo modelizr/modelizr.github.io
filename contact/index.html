@@ -6,9 +6,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <script src="https://use.fontawesome.com/eb8454c2a1.js"></script><link href="https://use.fontawesome.com/eb8454c2a1.css" media="all" rel="stylesheet">
+    <script src="https://use.fontawesome.com/eb8454c2a1.js"></script>
+    <link href="https://use.fontawesome.com/eb8454c2a1.css" media="all" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <link rel="stylesheet" href="/assets/css/main.css">
+    <script src='https://www.google.com/recaptcha/api.js?onload=reCaptchaCallback&render=explicit'></script>
   </head>
 
   <body>
@@ -52,12 +54,11 @@
               <input type="email" required class="form-control form-control-sm" name="email" id="email" placeholder="Email">
             </div>
             <div class="form-group col-md-12">
-              <label for="message">Message</label>
-              <textarea required class="form-control" name="message" id="message" placeholder="Message" rows="6">
-              </textarea>
+              <textarea required class="form-control" name="message" id="message" placeholder="Message" rows="6"></textarea>
             </div>
+            <div id="recaptcha" class="g-recaptcha col-12"></div>
             <div class="col-12">
-              <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+              <button type="submit" class="btn btn-sm btn-primary">Envoyer</button>
             </div>
           </form>
         </div>
@@ -99,5 +100,58 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
     <script src="/assets/js/main.js"></script>
 
+    <script>
+      (function($) {
+
+        const RC2KEY = '6LdLM3gUAAAAAPSuvrqUh-kGThljXbPAdBd0CPP2';
+
+        const reCaptchaVerify = res => {
+          if (res === document.querySelector('.g-recaptcha-response').value) {
+            canSubmit = true;
+          }
+        };
+
+        let canSubmit = false;
+
+        window.reCaptchaCallback = () => {
+          grecaptcha.render('recaptcha', {
+            'sitekey': RC2KEY,
+            'callback': reCaptchaVerify,
+            'expired-callback': () => {
+              canSubmit = false
+            }
+          });
+        }
+
+        const form = $('form');
+        const send = data => {
+          return $.ajax({
+            method: 'POST',
+            contentType: 'application/json',
+            url: 'https://modelizr-api.rduk.fr/1.0/contact',
+            data: JSON.stringify(data)
+          }).catch(err => {
+            throw err;
+          });
+        }
+        const onSubmit = e => {
+          e.preventDefault();
+
+          if (canSubmit) {
+            canSubmit = false;
+            let data = Object.assign(...$('input, textarea').map((index, el) => ({[el.name]: el.value})));
+            send(data)
+              .then(data => {
+                grecaptcha.reset();
+                form[0].reset();
+                alert(data.message);
+              });
+          }
+        }
+
+        form.on('submit', onSubmit);
+
+      } (jQuery))
+    </script>
   </body>
 </html>
