@@ -24,6 +24,10 @@ h5 {
     font-size: 1.5rem;
 }
 
+header {
+  height: 72px;
+}
+
 section {
     padding: 45px 0;
 }
