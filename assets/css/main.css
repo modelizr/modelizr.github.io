@@ -1,0 +1,272 @@
+@font-face {
+    font-family: 'geosanslightregular';
+    src: url('../fonts/geosanslight-webfont.woff2') format('woff2'),
+         url('../fonts/geosanslight-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+    font-family: "geosanslightregular", "helvetica neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+}
+
+h1, h2, h3, h4, h5 {
+    font-weight: lighter;
+}
+
+h1 {
+    margin: 0 0 30px;
+}
+
+h5 {
+    font-size: 1.5rem;
+}
+
+section {
+    padding: 45px 0;
+}
+
+section:nth-child(even) {background: #eeeeee;}
+
+section h2 {
+    margin-top: 2rem;
+    margin-bottom: 1.2rem;
+    width: 100%;
+    text-align: center;
+}
+
+section p {
+  width: 80%;
+  text-align: justify;
+  margin: 0 auto;
+}
+
+section p:nth-child(odd) {
+  margin: 10px auto;
+}
+
+header {
+    position: fixed;
+    overflow: hidden;
+    display: block;
+    margin-bottom: 0;
+    left: 0;
+    right: 0;
+    color: #ddd;
+    z-index: 1;
+}
+
+header .fa {
+    color: #ffffff;
+}
+
+a {
+    color: #e82969;
+}
+
+a:hover {
+    color: #930424;
+    text-decoration: none;
+}
+
+.navbar .container{
+    height: 110px;
+}
+
+.navbar-brand {
+    text-transform: uppercase;
+    font-weight: lighter;
+    letter-spacing: 1px;
+}
+
+.navbar-brand:hover {
+  color: #e82969;
+}
+
+.nav-link {
+    line-height: 20px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: lighter;
+    padding: 10px 15px 10px 15px;
+}
+
+.nav-link.active {
+    padding-bottom: 8px;
+    border-bottom: 2px solid #007C80;
+}
+
+.navbar {
+    border-bottom: 1px solid #ddd;
+    background-color: #fff;
+}
+
+.navbar .container{
+    height: 72px;
+}
+
+.navbar-brand strong {
+    color: #293133;
+}
+
+.navbar img {
+  height: 45px;
+}
+
+@media (max-width: 992px) {
+    .navbar {
+        background-color: #293133;
+    }
+    .navbar strong {
+        color: #930424;
+    }
+    .navbar-toggler {
+        color: #293133 !important;
+    }
+    #solution .card {
+        margin-top: 0 !important;
+    }
+}
+
+#jumbotron {
+    background: url(../img/jumbotron.png) no-repeat center 100px;
+    background-size: 70vh;
+    min-height: 450px;
+    overflow: hidden;
+    display: block;
+    padding: 150px 0 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    position: relative;
+}
+
+p.lead {
+    font-weight: lighter;
+    font-size: 20px;
+    margin-bottom: 4rem;
+    color: #e82969;
+    text-align: center;
+}
+
+#jumbotron .col-12 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#cite {
+  width: 80%;
+  margin: 0 auto;
+}
+
+#cite blockquote {
+  font-size: 1.2em;
+  font-style: italic;
+}
+
+#cite .row > cite {
+  text-align: right;
+  width: 80%;
+  margin: 0 auto;
+}
+
+#reasons li {
+  font-size: 1.1em;
+  list-style: none;
+  color: #e82969;
+}
+
+#contact form {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.btn-primary {
+  background-color: #e82969;
+  border-color: #e82969;
+}
+
+.btn-primary:hover {
+  background-color: #930424;
+  border-color: #930424;
+}
+
+.card {
+    padding: 0;
+    transition: all .3s ease-in-out;
+    margin-bottom:30px;
+    border: none;
+    background: none;
+}
+
+.card picture {
+    padding: 30px 0;
+    width: 100%;
+}
+
+.card picture img {
+    max-height: 110px;
+}
+
+.card p {
+    color: #888888;
+    font-size:1.05rem;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+.card p.lead {
+    color: #4ca3a6;
+    font-size:1.2rem;
+    font-weight: 150;
+    margin-top: 10px;
+}
+
+.member h3 {
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+.member img {
+    width: 200px;
+}
+
+.member .position {
+    color: #c3c3c3;
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+footer {
+    background-color: #293133;
+    color: #e82969;
+    padding-top: 100px;
+    padding-bottom: 30px;
+    font-weight: lighter;
+    text-align: center;
+}
+
+footer .social-networks {
+}
+
+footer .social-networks a {
+    align-items: center;
+    display: inline-flex;
+    height: 40px;
+    width: 39px;
+}
+
+footer .social-networks i {
+    font-size: 20px;
+    padding: 0 10px;
+}
+
+footer > div + div .row{
+    border-top: .5px solid #ffffff;
+}
