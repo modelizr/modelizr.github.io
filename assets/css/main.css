@@ -26,6 +26,7 @@ h5 {
 
 header {
   height: 72px;
+  overflow: visible !important;
 }
 
 section {
@@ -187,6 +188,25 @@ p.lead {
 #contact form {
   width: 80%;
   margin: 0 auto;
+}
+
+#legal {
+  padding-top: 80px;
+}
+
+#legal h1 {
+  text-align: center;
+}
+
+#legal ul {
+  width: 80%;
+  margin: 1rem auto;
+  list-style: none;
+  padding: 0;
+}
+
+#legal li {
+  margin: 0 0 10px;
 }
 
 .btn-primary {
