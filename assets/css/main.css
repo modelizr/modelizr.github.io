@@ -121,21 +121,6 @@ a:hover {
   height: 45px;
 }
 
-@media (max-width: 992px) {
-    .navbar {
-        background-color: #293133;
-    }
-    .navbar-brand, .navbar strong {
-        color: #fff;
-    }
-    .navbar-toggler {
-        color: #293133 !important;
-    }
-    #solution .card {
-        margin-top: 0 !important;
-    }
-}
-
 #jumbotron {
     background: url(../img/jumbotron.png) no-repeat center 200px;
     background-size: 70vh;
@@ -146,18 +131,6 @@ a:hover {
     margin-top: 0;
     margin-bottom: 0;
     position: relative;
-}
-
-#jumbotron ul {
-  display: flex;
-  margin: 0 auto;
-  padding: 0;
-}
-
-#jumbotron ul li{
-  display: inline-flex;
-  margin: 0 10px;
-  font-size: 24px;
 }
 
 #jumbotron .intro {
@@ -196,10 +169,6 @@ p.lead {
   text-align: right;
   width: 80%;
   margin: 0 auto;
-}
-
-#solution {
-
 }
 
 #reasons li {
@@ -320,4 +289,24 @@ footer .social-networks i {
 
 footer > div + div .row{
     border-top: .5px solid #ffffff;
+}
+
+
+@media (max-width: 992px) {
+    .navbar {
+        background-color: #293133;
+    }
+    .navbar-brand, .navbar strong {
+        color: #fff;
+    }
+    .navbar-toggler {
+        color: #293133 !important;
+    }
+    #solution .card {
+        margin-top: 0 !important;
+    }
+
+    #jumbotron nav a {
+      font-size: 0.7em !important;
+    }
 }
