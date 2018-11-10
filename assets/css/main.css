@@ -125,7 +125,7 @@ a:hover {
     .navbar {
         background-color: #293133;
     }
-    .navbar strong {
+    .navbar-brand, .navbar strong {
         color: #fff;
     }
     .navbar-toggler {
@@ -137,23 +137,43 @@ a:hover {
 }
 
 #jumbotron {
-    background: url(../img/jumbotron.png) no-repeat center 100px;
+    background: url(../img/jumbotron.png) no-repeat center 200px;
     background-size: 70vh;
     min-height: 450px;
     overflow: hidden;
     display: block;
-    padding: 150px 0 0;
+    padding: 110px 0 0;
     margin-top: 0;
     margin-bottom: 0;
     position: relative;
 }
 
+#jumbotron ul {
+  display: flex;
+  margin: 0 auto;
+  padding: 0;
+}
+
+#jumbotron ul li{
+  display: inline-flex;
+  margin: 0 10px;
+  font-size: 24px;
+}
+
+#jumbotron .intro {
+  margin-top: 65vh;
+}
+
 p.lead {
     font-weight: lighter;
     font-size: 20px;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     color: #e82969;
     text-align: center;
+}
+
+#jumbotron p.lead {
+  color: #293133;
 }
 
 #jumbotron .col-12 {
@@ -164,7 +184,6 @@ p.lead {
 }
 
 #cite {
-  width: 80%;
   margin: 0 auto;
 }
 
@@ -177,6 +196,10 @@ p.lead {
   text-align: right;
   width: 80%;
   margin: 0 auto;
+}
+
+#solution {
+
 }
 
 #reasons li {
