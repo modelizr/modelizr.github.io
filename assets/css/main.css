@@ -122,7 +122,6 @@ a:hover {
 }
 
 #jumbotron {
-    background: url(../img/jumbotron.png) no-repeat center 200px;
     background-size: 70vh;
     min-height: 450px;
     overflow: hidden;
@@ -131,6 +130,15 @@ a:hover {
     margin-top: 0;
     margin-bottom: 0;
     position: relative;
+}
+
+#jumbotron.home {
+  background: url(../img/jumbotron.png) no-repeat center 200px;
+  background-size: 70vh;
+}
+
+#jumbotron.about {
+
 }
 
 #jumbotron .intro {
